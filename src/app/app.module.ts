@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroImagePathPipe } from './hero-image-path.pipe';
+import { HeroImagePathPipe } from './_pipes/hero-image-path.pipe';
 
 @NgModule({
   declarations: [AppComponent, HeroImagePathPipe],
@@ -11,4 +11,4 @@ import { HeroImagePathPipe } from './hero-image-path.pipe';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

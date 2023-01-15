@@ -8,16 +8,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  
-  heroes$!: Observable<Hero[]>;
-  stuff$!: Observable<string>;
 
-  constructor(private http: HttpClient) {}
+  heroList$!: Observable<HeroList>;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.heroes$ = this.http.get<Hero[]>('https://localhost:7168/heroes');
-    this.stuff$ = this.http.get<string>('https://www.dotabuff.com/heroes/troll-warlord/items');
+    this.heroList$ = this.http.get<HeroList>('https://localhost:7168/heroes');
   }
+}
+
+interface HeroList {
+  strongHeroes: Hero[];
+  weakHeroes: Hero[];
 }
 
 interface Hero {
