@@ -1,12 +1,5 @@
-<ul *ngIf="heroList$ | async as heroList">
-  <li *ngFor="let hero of heroList.strongHeroes">
-    <a [routerLink]="['/heroes', hero.id]"><div><img [src]="hero.name | heroImagePath" /></div>
-    {{ hero.name }} - {{ hero.winrate }}</a>
-  </li>
+<div *ngIf="heroList$ | async as heroList">
+  <app-hero-list-item *ngFor="let hero of heroList.strongHeroes" [hero]="hero"></app-hero-list-item>
   <hr>
-  <li *ngFor="let hero of heroList.weakHeroes">
-    <a [routerLink]="['/heroes', hero.id]"><div><img [src]="hero.name | heroImagePath" /></div>
-    {{ hero.name }} - {{ hero.winrate }}</a>
-  </li>
-</ul>
-<h2>Test</h2>
+  <app-hero-list-item *ngFor="let hero of heroList.weakHeroes" [hero]="hero"></app-hero-list-item>
+</div>

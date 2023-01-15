@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HeroImagePathPipe implements PipeTransform {
   transform(value: string): string {
-    return `/assets/images/heroes/${value.toLowerCase().replace(' ', '_')}.png`;
+    const formattedName = value.toLowerCase().replace(/ /g, '_').replace('-', '');
+    return `/assets/images/heroes/${formattedName}.png`;
   }
 }

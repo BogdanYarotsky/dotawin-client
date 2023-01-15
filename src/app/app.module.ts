@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroImagePathPipe } from './_pipes/hero-image-path.pipe';
+import { HeroListItemComponent } from './hero-list-item/hero-list-item.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroImagePathPipe],
+  declarations: [AppComponent, HeroImagePathPipe, HeroListItemComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

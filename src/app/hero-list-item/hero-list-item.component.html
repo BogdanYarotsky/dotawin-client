@@ -1,0 +1,6 @@
+  <div>
+    <a [routerLink]="['/heroes', hero.id]">
+      <div><img [src]="hero.name | heroImagePath" /></div>
+      <div>{{ hero.name }} - {{ hero.winrate }}</div>
+    </a>
+  </div>
