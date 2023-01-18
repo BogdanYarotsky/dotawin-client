@@ -1,0 +1,5 @@
+<ng-container *ngIf="heroList$ | async as heroList">
+  <app-hero-list-item *ngFor="let hero of heroList.strongHeroes" [hero]="hero"></app-hero-list-item>
+  <hr>
+  <app-hero-list-item *ngFor="let hero of heroList.weakHeroes" [hero]="hero"></app-hero-list-item>
+</ng-container>

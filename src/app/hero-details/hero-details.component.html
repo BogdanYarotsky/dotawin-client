@@ -1,0 +1,9 @@
+<ng-container *ngIf="heroDetails$ | async as hero">
+    <div><img [src]="hero.name | imagePath:'heroes'" /></div>
+    <div>{{ hero.name }} - {{ hero.winrate }}</div>
+    <hr>
+    <ng-container *ngFor="let item of hero.items">
+        <div><img [src]="item.name | imagePath:'images'" /></div>
+        <div>{{ item.name }} - {{ item.matches }}</div>
+    </ng-container>
+</ng-container>
